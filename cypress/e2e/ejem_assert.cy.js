@@ -221,16 +221,16 @@ describe('cursito cypress', () => {
         let email = 'qadevabc2022@gmail.com'
         let otc
        // let id
-        let token ='ya29.A0AVA9y1sEOfTgTEdiPKNYQH1cU8ya5OACbXUOr5Hs5QeWbL83kh3nbWFpT1mUGAEjTucDH5leshHJZyDBdxFDfxJPD0kFO5CyzPNkwuWO5sG03JBP6_okJaH2rpmrToSfk7XOPH7FNfVkl6nxv-5CFUOJBnK0QAaCgYKATASATASFQE65dr8e24IiyoLGGTi7XVgehtzRw0165'
+        let token =''
         cy.request({
 
             method: 'POST',
             url: 'https://accounts.google.com/o/oauth2/token',
             body: {
                 "grant_type": 'refresh_token',
-                "client_id": '164732834550-m951bbs4hs6v4r2acmfd97quf1ukro77.apps.googleusercontent.com',
-                "client_secret": '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',
-                "refresh_token": '1//0hbiM0eZj3oz7CgYIARAAGBESNwF-L9IrUV45kh1JwJySH5rr2mNyfcpjY7OePaRSD68Wt_ejePdIKNoZghYMsntWVEyVEnBoIP8'
+                "client_id": '',
+                "client_secret": '',
+                "refresh_token": ''
             },
         }).then(response => {
             cy.log(JSON.stringify(response))
