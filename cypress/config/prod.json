@@ -1,0 +1,18 @@
+{
+  "baseUrl": "http://localhost:5500",
+  "env": {
+    "ambiente" : "PRD",
+    "url": "https://privpro.abcserviciosfinancieros.cl/",
+    "defaultCommandTimeout":30000,
+    "chromeWebSecurity":false,
+    "viewportHeight":768,
+    "viewportWidth":1349,
+      
+    "retries":{
+      "runMode": 0,
+      "openMode": 0
+    }
+  }
+}
+
+
