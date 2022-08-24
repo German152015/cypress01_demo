@@ -35,3 +35,50 @@ Cypress.Commands.add('CMD_Login', (user, pass) => {
 Cypress.Commands.add('CMD_Logout', () => {
     cy.get('#ImgCerrar').should('be.visible').click()
 })
+
+Cypress.Commands.add('CMD_navegador_check', () => {
+    cy.log("channel : " + Cypress.browser.channel)
+    cy.log("displayName : " + Cypress.browser.displayName)
+    cy.log("family : " + Cypress.browser.family)
+    cy.log("majorVersion : " + Cypress.browser.majorVersion)
+    cy.log("name : " + Cypress.browser.name)
+    cy.log("version : " + Cypress.browser.version)
+    expect(Cypress.browser.name).not.to.be.empty
+})
+
+
+Cypress.Commands.add('CMD_Resolucion', (opcion) => {
+
+    switch (opcion) {
+        case 0:
+            cy.log("Resolución movile samsung-s10 " + "Opcion ingresada es : " + opcion)
+            cy.viewport('samsung-s10')
+            break;
+
+        case 1:
+            cy.log("Resolución movile iphone-7  " + "Opcion ingresada es : " + opcion)
+            cy.viewport('iphone-7')
+            break;
+
+        case 2:
+            cy.log("Resolución web 1349x768  " + "Opcion ingresada es : " + opcion)
+            cy.viewport(1349, 768)
+            break;
+    }
+})
+
+
+Cypress.Commands.add('CMD_Obtener_URL',(opcion) => {
+
+    switch (opcion) {
+        case 0:
+            cy.visit('https://privqa.abcserviciosfinancieros.cl/')
+            break;
+        case 1:
+            cy.visit('')
+            break;
+        case 2:
+            cy.visit('')
+            break;
+    }
+})
