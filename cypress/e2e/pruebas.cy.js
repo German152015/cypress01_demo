@@ -35,7 +35,7 @@ describe('cursito cypress', () => {
 
 });
 
-  
+  //prueba cypress en github
   it('login exitoso web servicios financieros', () => {
     cy.CMD_Login('120004107','1234')
     cy.screenshot('evidencia login')
