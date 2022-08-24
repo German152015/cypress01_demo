@@ -11,12 +11,9 @@ describe('cursito cypress', () => {
     cy.get('input#iptPassiptPassHide[type="password"]').should('contain.value', "1234")
     cy.wait(3000)
     cy.get('#btnNextOn').should('be.visible').should('be.enabled').should('have.text', 'Ingresar').click()
-
-
-   
-
-    //*[@id="flcHeaderMenu1"]
-    })
+    cy.screenshot('evidencia')
+    cy.get('#ImgCerrar').should('be.visible').click()
+   })
     
 
    
@@ -63,69 +60,9 @@ describe('cursito cypress', () => {
     
   })
   
-  //##DRIVER ORACLE
-//driver = oracle.jdbc.driver.OracleDriver
-//ora = jdbc:oracle:thin
-
-  //jdbc:oracle:thin:@192.168.76.108:1521:kun [INTELLECTCARDS on INTELLECTCARDS]
 
 
-
-  const query = "select * from cdmst";
-
-  it("prueba query1", () => {
-   
-    cy.task("sqlQuery", query).then((resolvedValue) => {
-      
-        console.log("result==>" + resolvedValue['CIVIL_ID']);
-     
-    });
- 
-
-
-
-
-
-
-   });
-
-   /*
-   it("conexion bbdd", () => {
-    
-      const user = "INTELLECTCARDS"
-      const password ="intellectcards"
-      const ip ="@192.168.76.108"
-      const sid ="kun"
-      const port = 1521
-      const connectString = "oracle:thin:@192.168.76.108:1521:kun"
-
-      oracledb.initOracleClient({ libDir: "C:/instantclient_21_6"});
-
-          let conn
-          conn = await oracledb.getConnection(connectString,user,password)
-          result = await conn.execute(query);
-       
-      cy.task()
-
-
-
-   });
-
-   */
- 
-
-
-   beforeEach(function () {
-   
-    cy.CMD_configuraBeforeTest()
-    
-
-   })
-
-
-
-
-   it.only('cambio de ambientes',()=>{
+   it('cambio de ambientes',()=>{
     cy.wait(15000)
     cy.xpath('//input[@name="_contents1_S002_500" or @id="iptRut"]').should('be.visible').should('be.enabled').type('120004107')
     cy.get('input#iptPassiptPassHide[type="password"]').should('be.visible').should('be.enabled').type('1234')
