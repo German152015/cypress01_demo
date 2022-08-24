@@ -24,11 +24,14 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('CMD_configuraBeforeTest',() => {
-     
-    cy.log("Configuración desplegada es : " + Cypress.env('ambiente'))
-    cy.visit(Cypress.env('url'))
-    cy.viewport(Cypress.env('viewportWidth'),Cypress.env('viewportHeight'))
+Cypress.Commands.add('CMD_Login', (user, pass) => {
+    cy.wait(18000)
+    cy.get('#iptRut').should('be.visible').and('be.enabled').type(user,{delay:300})
+    cy.get('#iptPassiptPassHide').should('be.visible').and('be.enabled').type(pass,{force:true}) //agregar force
+    cy.wait(3000)
+    cy.get('#btnNextOn').should('be.visible').and('be.enabled').and('have.text', 'Ingresar').click()
+})
 
-    
+Cypress.Commands.add('CMD_Logout', () => {
+    cy.get('#ImgCerrar').should('be.visible').click()
 })
